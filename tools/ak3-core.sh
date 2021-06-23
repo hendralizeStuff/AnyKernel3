@@ -409,7 +409,7 @@ flash_boot() {
 
 # flash_dtbo (flash dtbo only)
 flash_dtbo() {
-  local i dtbo dtboblock;
+  local i dtbo;
 
   cd $home;
   for i in dtbo dtbo.img; do
@@ -420,7 +420,11 @@ flash_dtbo() {
   done;
 
   if [ "$dtbo" -a ! -f dtbo_flashed ]; then
-    dtboblock=/dev/block/bootdevice/by-name/dtbo$slot;
+          if [ -z "$dtboblock" ]; then
+            dtboblock=/dev/block/bootdevice/by-name/dtbo$slot;
+          else
+            dtboblock=${dtboblock}${slot}
+          fi
     if [ ! -e "$dtboblock" ]; then
       abort "dtbo partition could not be found. Aborting...";
     fi;

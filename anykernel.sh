@@ -21,6 +21,7 @@ supported.patchlevels=
 
 # shell variables
 block=/dev/block/platform/omap/omap_hsmmc.0/by-name/boot;
+dtboblock=/dev/block/bootdevice/by-name/dtbo;
 is_slot_device=0;
 ramdisk_compression=auto;
 
