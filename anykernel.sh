@@ -10,18 +10,18 @@ do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=
-device.name2=
-device.name3=
-device.name4=
-device.name5=
+device.name1=a51
+device.name2=m21
+device.name3=m31
+device.name4=m31s
+device.name5=f41
 supported.versions=
 supported.patchlevels=
 '; } # end properties
 
 # shell variables
-block=
-dtboblock=
+block=/dev/block/platform/13520000.ufs/by-name/boot;
+dtboblock=/dev/block/platform/13520000.ufs/by-name/dtbo;
 is_slot_device=0;
 ramdisk_compression=auto;
 
